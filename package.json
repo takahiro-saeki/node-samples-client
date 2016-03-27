@@ -1,0 +1,22 @@
+{
+  "name": "node-samples-client",
+  "version": "1.0.0",
+  "description": "アタシが教えてア・ゲ・ルnode.js実践マニュアルのサンプル",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takahiro-saeki/node-samples-client.git"
+  },
+  "keywords": [
+    "もふもふパラダイス"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takahiro-saeki/node-samples-client/issues"
+  },
+  "homepage": "https://github.com/takahiro-saeki/node-samples-client#readme"
+}
