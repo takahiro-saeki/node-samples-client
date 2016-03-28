@@ -49,9 +49,15 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
+  "browser": {
+    "drawer": "./node_modules/jsrender/jsrender.min.js"
+  },
   "browserify-shim": {
     "jquery": {
       "exports": "$"
+    },
+    "jsrender": {
+      "exports": "jsrender"
     }
   },
   "browserify": {

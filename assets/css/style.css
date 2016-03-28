@@ -2,6 +2,7 @@
 @import 'common/grid';
 @import 'common/material-icons';
 @import 'common/nav';
+@import 'common/modal';
 
 .main {
   max-width: 1024px;
