@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "babel": {
     "presets": [
-      "es2015"
+      "es2015",
+      "transform-runtime"
     ]
   },
   "description": "アタシが教えてア・ゲ・ルnode.js実践マニュアルのサンプル",
@@ -33,17 +34,30 @@
     "babelify": "^7.2.0",
     "browser-sync": "^2.11.2",
     "browserify": "^13.0.0",
+    "browserify-shim": "^3.8.12",
     "fs": "0.0.2",
     "gulp": "^3.9.1",
     "gulp-ejs": "^2.1.1",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.1.0",
+    "jquery": "^2.2.2",
+    "jsrender": "^0.9.74",
     "postcss-media-minmax": "^2.1.1",
     "postcss-size": "^1.0.0",
     "precss": "^1.4.0",
     "require-dir": "^0.3.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "browserify-shim": {
+    "jquery": {
+      "exports": "$"
+    }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
   }
 }

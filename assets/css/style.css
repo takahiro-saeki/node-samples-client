@@ -2,3 +2,7 @@
 @import 'common/grid';
 @import 'common/material-icons';
 @import 'common/nav';
+
+.main {
+  color: #fff;
+}

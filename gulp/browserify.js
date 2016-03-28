@@ -16,7 +16,7 @@ gulp.task('js', () => {
   .on('error', function(err) {
     return notify().write(err);
   })
-  .pipe(source('./template/js/main.js'))
+  .pipe(source('main.js'))
   .pipe(buffer())
   .pipe(gulp.dest(PATH.TEMP_JS))
   .pipe(browserSync.stream());
