@@ -1,0 +1,18 @@
+.nav {
+  background: linear-gradient(135deg, #c9334e 0%,#e06255 50%,#e06255 51%,#f38e5a 100%);
+  color: #fff;
+  padding: 1rem;
+  font-size: 2rem;
+  nav {
+    section {
+      text-align: center;
+    }
+  }
+}
+/*
+background: #c9334e;
+background: -moz-linear-gradient(-45deg, #c9334e 0%, #e06255 50%, #e06255 51%, #f38e5a 100%);
+background: -webkit-linear-gradient(-45deg, #c9334e 0%,#e06255 50%,#e06255 51%,#f38e5a 100%);
+background: linear-gradient(135deg, #c9334e 0%,#e06255 50%,#e06255 51%,#f38e5a 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9334e', endColorstr='#f38e5a',GradientType=1 );
+*/
