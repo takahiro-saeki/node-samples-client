@@ -12,10 +12,8 @@ gulp.task('js', () => {
   browserify({
     entries: ['./assets/js/common.js']
   })
-  .bundle()
-  .on('error', function(err) {
-    return notify().write(err);
-  })
+  .transform(babelify, {presets: ["es2015"]})
+  .bundle().on('error', err => notify().write(err))
   .pipe(source('main.js'))
   .pipe(buffer())
   .pipe(gulp.dest(PATH.TEMP_JS))
