@@ -42,6 +42,7 @@
     "gulp-postcss": "^6.1.0",
     "jquery": "^2.1.0",
     "jsrender": "^0.9.74",
+    "postcss-color-function": "^2.0.1",
     "postcss-media-minmax": "^2.1.1",
     "postcss-size": "^1.0.0",
     "precss": "^1.4.0",
