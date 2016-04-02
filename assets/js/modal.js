@@ -3,6 +3,7 @@ export default class modal {
     this.$body = $('body');
     this.$btn = $('.postBtn');
     this.$modal = $('#modal');
+    this.$document = $(document);
     this._show();
     this._hide();
   }
@@ -16,9 +17,31 @@ export default class modal {
   }
 
   _hide() {
-    $(document).on('click', '#hideBtn', () => {
+    this.$document.on('click', '#hideBtn', () => {
       $('.modal').remove();
       this.$modal.removeClass('modal-bg');
     })
+  }
+
+  _create() {
+    this.$document.on('click', 'input[name="createPost"]', () => {
+      $.ajax({
+        url : '/create',
+        type : 'GET',
+        success: _success(),
+        error: error,
+        datatype:'json'
+      }).done(() => this._hide()).done(() => this._complete());
+      //TODO エラーダイアログの表示処理
+      //TODO ajaxの処理はAPI関数を作成してまとめる？
+    })
+  }
+
+  _success() {
+    //TODO textareaのvalueをまとめてリクエスト投げる
+  }
+
+  _complete() {
+    //TODO 投稿完了モーダルを表示する
   }
 }

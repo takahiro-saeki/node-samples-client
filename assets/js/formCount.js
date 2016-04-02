@@ -1,4 +1,3 @@
-import $ from 'jquery';
 export default class countDown {
   constructor(el) {
     this.$count = $('#count');
