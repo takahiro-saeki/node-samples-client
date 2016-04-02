@@ -3,6 +3,7 @@
 @import 'common/material-icons';
 @import 'common/nav';
 @import 'common/modal';
+@import 'common/edit';
 
 .main {
   max-width: 1024px;
@@ -18,16 +19,16 @@
   }
 }
 
-.delete {
+.deleteBtn {
   border: none;
-  background: #d81b60;
+  background: #cc4c63;
   color: #fff;
   font-size: 1.4rem;
   border-radius: .5rem;
   padding: .5rem 1rem;
 }
 
-.edit {
-  @extend .delete;
-  background: #1de9b6;
+.editBtn {
+  @extend .deleteBtn;
+  background: #f58e5d;
 }
