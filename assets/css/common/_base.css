@@ -56,6 +56,10 @@ a {
   }
 }
 
+i {
+  cursor: pointer
+}
+
 @define-mixin min $minWidth {
   @media screen and (width >= $minWidth) {
     @mixin-content;

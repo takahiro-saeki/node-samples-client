@@ -60,3 +60,33 @@
   z-index: 10;
   background: color(#000 a(50%));
 }
+
+.deleteOk {
+  border: none;
+  background: #cc4c63;
+  color: #fff;
+  font-size: 1.8rem;
+  border-radius: .5rem;
+  padding: 1rem 1rem;
+  text-align: center;
+  margin: 8rem auto;
+}
+
+.deleteChancel {
+  @extend .deleteOk;
+  background: #f58e5d;
+}
+
+.complete {
+  position: absolute;
+  size: 60% 50%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+  z-index: 100;
+  border-radius: 1rem;
+  background: #ffebee;
+}

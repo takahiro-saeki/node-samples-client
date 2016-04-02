@@ -6,6 +6,7 @@ export default class modal {
     this.$document = $(document);
     this._show();
     this._hide();
+    this._create();
   }
   _show() {
     this.$btn.on('click', () => {
@@ -18,30 +19,54 @@ export default class modal {
 
   _hide() {
     this.$document.on('click', '#hideBtn', () => {
-      $('.modal').remove();
-      this.$modal.removeClass('modal-bg');
+      this._close();
     })
   }
 
   _create() {
-    this.$document.on('click', 'input[name="createPost"]', () => {
+    this.$document.on('click', 'input[name="createPost"]', e => {
+      e.preventDefault();
+      $.mockjax(
+        {
+          url: 'create',　　　　　　　　　　　
+          responseTime: 500,
+          responseText: {
+            data: 'コンプリート'
+          }
+        }
+      );
       $.ajax({
-        url : '/create',
-        type : 'GET',
-        success: _success(),
-        error: error,
-        datatype:'json'
-      }).done(() => this._hide()).done(() => this._complete());
+        url : 'create',
+        type : 'POST',
+        data: this._data(),
+        success: console.log('OK'),
+        datatype: 'json'
+      }).done(() => this._close()).done(() => this._complete());
       //TODO エラーダイアログの表示処理
       //TODO ajaxの処理はAPI関数を作成してまとめる？
     })
   }
 
-  _success() {
-    //TODO textareaのvalueをまとめてリクエスト投げる
+  _data() {
+    let data = new Object();
+    let postData = $('#postForm').val();
+    data.post = postData;
+    return data;
   }
 
   _complete() {
-    //TODO 投稿完了モーダルを表示する
+    let tmpl = $.templates('#completeData');
+    let html = tmpl.render();
+    this.$body.append(html);
+    $('.complete').fadeOut(3000);
+  }
+
+  _error() {
+    alert('エラーだよ')
+  }
+
+  _close() {
+    $('.modal').remove();
+    this.$modal.removeClass('modal-bg');
   }
 }
