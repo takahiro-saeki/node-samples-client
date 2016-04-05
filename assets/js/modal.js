@@ -8,6 +8,7 @@ export default class modal {
     this._hide();
     this._create();
   }
+
   _show() {
     this.$btn.on('click', () => {
       let tmpl = $.templates('#modalData');
