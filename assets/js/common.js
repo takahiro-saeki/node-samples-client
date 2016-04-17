@@ -1,19 +1,31 @@
-import firebase from 'firebase';
+import Firebase from 'firebase';
 import moment from 'moment';
 import countDown from './formCount';
 const firePost = 'https://mohuparatodo.firebaseio.com/data/';
 
 class main {
   constructor() {
+    new countDown('#postForm');
     this._create();
     this._newPost();
     this._hide();
-    new countDown('#postForm');
+    this._init();
   }
 
-  init() {
+  _init() {
     $(document).ready(() => {
-
+      let initData = new Firebase(firePost);
+      initData.on('value', data => {
+        let arr = [];
+        let initObj = data.val();
+        for (let key in initObj) {
+          arr.push(initObj[key]);
+        }
+        let renderInit = {init: arr};
+        let tmpl = $.templates('#initData');
+        let html = tmpl.render(renderInit);
+        $('#init').html(html);
+      })
     })
   }
 
@@ -59,10 +71,13 @@ class main {
     })
   }
 
-
-
   _delete() {
-
+    $(document).on('click', '.deleteBtn', () => {
+      let tmpl = $.templates('#deleteData');
+      let html = tmpl.render();
+      $('#modal').addClass('modal-bg');
+      this.$body.append(html);
+    })
   }
 
   _edit() {
