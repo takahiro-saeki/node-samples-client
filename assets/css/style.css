@@ -4,6 +4,7 @@
 @import 'common/nav';
 @import 'common/modal';
 @import 'common/edit';
+@import 'common/loader';
 
 .main {
   max-width: 1024px;

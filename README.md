@@ -1,5 +1,5 @@
-#アタシが教えてア・ゲ・ル♥ node.js実践マニュアル(仮)  
-クライアントサイドのサンプルリポジトリ
+#firebase サンプル Todos
+firebaseのサンプルtodoアプリ
 ## usage  
 install  
 ```
