@@ -19,6 +19,10 @@ class main {
 
   _init() {
     $(document).ready(() => {
+      let loader = $.templates('#loaderData');
+      let addBg = $('#modal').addClass('init-bg')
+      let html = loader.render();
+      $(document.body).append(html);
       let initData = new Firebase(firePost);
       initData.on('value', data => {
         let arr = [];
@@ -29,6 +33,8 @@ class main {
         let renderInit = {init: arr};
         let tmpl = $.templates('#initData');
         let html = tmpl.render(renderInit);
+        $('.load-bg').remove();
+        $('#modal').removeClass('init-bg');
         $('#init').html(html);
       })
     })
@@ -60,14 +66,16 @@ class main {
         $('.modals').remove();
         $('#modal').removeClass('modal-bg');
         $('.load-bg').remove();
+        this._success();
       });
     })
   }
 
   _success() {
     let tmpl = $.templates('#completeData');
-    let html = tmpl.render();
-    this.$body.append(html);
+    let html = tmpl.render({complete: '完了しました！'});
+    $(document.body).append(html);
+    $('.complete').fadeOut(2000);
   }
 
   _hide() {
@@ -105,6 +113,7 @@ class main {
       DeletePath.remove();
       $('.modals').remove();
       $('#modal').removeClass('modal-bg');
+      this._success()
     })
   }
 
@@ -139,6 +148,7 @@ class main {
       let onComplete = () => {
         $('.modals').remove();
         $('#modal').removeClass('modal-bg');
+        this._success()
       }
       editPath.update({
         content: editText,
